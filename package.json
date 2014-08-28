@@ -1,0 +1,34 @@
+{
+  "main": "./main.js",
+  "browser": {
+    "jquery": "./bower_components/jquery/dist/jquery.js",
+    "bootstrap": "./bower_components/bootstrap/dist/js/bootstrap.js",
+    "fancybox": "./bower_components/fancybox/source/jquery.fancybox.js"
+  },
+  "browserify-shim": {
+    "jquery": {
+      "exports": "$"
+    },
+    "bootstrap": {
+      "depends": [
+        "jquery:$"
+      ]
+    },
+    "fancybox": {
+      "depends": [
+        "jquery:$"
+      ]
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "gulp-browserify": "^0.5.0",
+    "gulp-minify-css": "^0.3.7",
+    "gulp-uglify": "^0.3.2"
+  }
+}
